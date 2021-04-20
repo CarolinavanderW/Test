@@ -1,6 +1,6 @@
 pipeline {
     agent any
-      dir('/home/vagrant/rialto-cicd/secondary-audit-service') { 
+      dir('/home/vagrant/rialto-cicd/secondary-audit-service')  
    stages {
      stage('Build') {
         steps {   
