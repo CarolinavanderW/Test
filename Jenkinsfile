@@ -1,8 +1,7 @@
 pipeline {
     agent any
      customWorkspace "/home/vagrant/rialto-cicd/secondary-audit-service"
-   }
-    stages {
+   stages {
      stage('Build') {
         steps {   
             sh 'pwd'
