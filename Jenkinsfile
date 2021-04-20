@@ -15,9 +15,9 @@ pipeline {
        steps {
         sh 'TAG=DEV2.1.${BUILD_NUMBER}'  
         sh 'sudo docker tag secondaryauditservice:latest 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:latest'
-        sh 'sudo docker tag secondaryauditservice:latest 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:${TAG}'
+        sh 'sudo docker tag secondaryauditservice:latest 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:TAG'
         sh 'sudo docker push 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:latest'
-        sh 'sudo docker push 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:${TAG}'
+        sh 'sudo docker push 592473443790.dkr.ecr.us-east-1.amazonaws.com/service/secondary-audit-service:TAG'
             }
         }
     }
