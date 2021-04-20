@@ -7,7 +7,8 @@ pipeline {
    stages {
      stage('Build') {
        steps {   
-        sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
+         sh 'pwd'
+         sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
           }
         }
      stage('get-login-aws') {     
