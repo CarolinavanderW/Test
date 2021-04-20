@@ -1,16 +1,15 @@
 pipeline {
     agent any
+    customWorkspace '/home/vagrant/rialto-cicd/secondary-audit-service'
     stages {
       stage('Build') {
         steps {   
-          dir('/home/vagrant/rialto-cicd/secondary-audit-service') {  
-            sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
+          sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
           }
         }
-    }
-        stage('get-login-aws') {     
-            steps {
-                sh 'sudo aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 592473443790.dkr.ecr.us-east-1.amazonaws.com'
+       stage('get-login-aws') {     
+         steps {
+           sh 'sudo aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 592473443790.dkr.ecr.us-east-1.amazonaws.com'
         }
      }    
         stage('tag and push') {    
