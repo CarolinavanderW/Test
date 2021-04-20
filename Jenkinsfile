@@ -1,14 +1,15 @@
 pipeline {
-  agent {
-    any {
-      customWorkspace '/home/vagrant/rialto-cicd/secondary-audit-service'
+    agent {
+        label {
+            label "master"
+            customWorkspace "/home/vagrant/rialto-cicd/secondary-audit-service"
+        }
     }
-      }
-   stages {
+    stages {
      stage('Build') {
-       steps {   
-         sh 'pwd'
-         sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
+        steps {   
+            sh 'pwd'
+            sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
           }
         }
      stage('get-login-aws') {     
