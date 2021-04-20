@@ -1,10 +1,9 @@
 pipeline {
     agent any
-      dir('/home/vagrant/rialto-cicd/secondary-audit-service')  
-   stages {
+  stages {
      stage('Build') {
         steps {   
-            sh 'pwd'
+            dir('/home/vagrant/rialto-cicd/secondary-audit-service')  
             sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
           }
         }
