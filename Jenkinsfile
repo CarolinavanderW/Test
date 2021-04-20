@@ -1,5 +1,5 @@
 pipeline {
-    agent any {
+    "agent any" {
         customWorkspace "/home/vagrant/rialto-cicd/secondary-audit-service"
         }
     stages {
