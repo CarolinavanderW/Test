@@ -9,7 +9,7 @@ pipeline {
                 }
         stage('get-login-aws') {     
             steps {
-                sh 'sudo aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 592473443790.dkr.ecr.us-east-1.amazonaws.com
+                sh 'sudo aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin 592473443790.dkr.ecr.us-east-1.amazonaws.com'
             }
            }    
         stage('tag and push') {    
