@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-      TAG = "DEV2.1.${BUILD_NUMBER}"
+      TAG = "BETA2.1.${BUILD_NUMBER}"
    }
   stages {
      stage('Build') {
