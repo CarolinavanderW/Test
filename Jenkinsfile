@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'sudo /home/vagrant/rialto-cicd/secondary-audit-service/gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
+              dir("/home/vagrant/rialto-cicd/secondary-audit-service") {  
+                sh 'sudo ./gradlew -Pprod bootWar jibDockerBuild --image=secondaryauditservice --no-daemon'
          }
                 }
         stage('get-login-aws') {     
