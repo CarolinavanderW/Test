@@ -1,7 +1,7 @@
 pipeline {
     agent {
         label {
-            label "master"
+            label "any"
             customWorkspace "/home/vagrant/rialto-cicd/secondary-audit-service"
         }
     }
